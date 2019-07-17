@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
 }
+/*ELEMENTS FOR TEST*/
 .red {
   background-color: red;
 }
@@ -13,6 +14,7 @@
 .orange {
   background-color: orange;
 }
+/*CONTAINERS_COLUMNS*/
 .container {
   display: block;
   margin: auto;
@@ -41,6 +43,33 @@ $container-max-widths: (
         lg: 960px,
         xl: 1140px
 );
+@each $name, $size in $grid-breakpoints {
+  @media screen and (min-width: $size) {
+    .container {
+      width: map_get($container-max-widths, $name);
+    }
+    @for $count from 1 through $grid-columns {
+      @if $name != xs
+      {
+        .col--#{$name}-#{$count} {
+          width: percentage($count / $grid-columns);
+          padding-left: $grid-gutter-width / 2;
+          padding-right: $grid-gutter-width / 2;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 0) {
+  @for $count from 1 through $grid-columns {
+    .col-#{$count} {
+      width: percentage($count / $grid-columns);
+      padding-left: $grid-gutter-width / 2;
+      padding-right: $grid-gutter-width / 2;
+    }
+  }
+}
+/*COLORS*/
 $color-themes: (
         primary: (back: #007bff,color: #fff),
         secondary: (back: #6c757d,color: #fff),
@@ -51,6 +80,7 @@ $color-themes: (
         light: (back: #f8f9fa,color: black),
         dark: (back: #343a40,color: #fff)
 );
+/*BUTTONS*/
 .btn {
   cursor: pointer;
   vertical-align: middle;
@@ -92,29 +122,25 @@ $color-themes: (
     font-weight: lighter;
   }
 }
-@each $name, $size in $grid-breakpoints {
-  @media screen and (min-width: $size) {
-    .container {
-      width: map_get($container-max-widths, $name);
-    }
-    @for $count from 1 through $grid-columns {
-      @if $name != xs
-      {
-        .col--#{$name}-#{$count} {
-          width: percentage($count / $grid-columns);
-          padding-left: $grid-gutter-width / 2;
-          padding-right: $grid-gutter-width / 2;
-        }
-      }
-    }
-  }
+/*IMAGES*/
+%baseImgResp {
+  max-width: 100%;
+  height: auto;
 }
-@media screen and (min-width: 0) {
-  @for $count from 1 through $grid-columns {
-    .col-#{$count} {
-      width: percentage($count / $grid-columns);
-      padding-left: $grid-gutter-width / 2;
-      padding-right: $grid-gutter-width / 2;
-    }
-  }
+.img-responsive {
+  @extend %baseImgResp;
+}
+.img-thumbnail {
+  padding: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  @extend %baseImgResp;
+}
+.img-rounded {
+  @extend %baseImgResp;
+  border-radius: 4px;
+}
+.img-circle {
+  @extend %baseImgResp;
+  border-radius: 50%;
 }
