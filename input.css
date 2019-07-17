@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-size: 2vw;
   margin: 0;
   padding: 0; }
 
@@ -8,6 +9,9 @@
 
 .blue {
   background-color: blue; }
+
+.orange {
+  background-color: orange; }
 
 .container {
   display: block;
@@ -21,6 +25,185 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap; }
+
+.btn {
+  cursor: pointer;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background-color: rgba(0, 0, 0, 0); }
+
+.btn:focus {
+  outline-style: none; }
+
+.btn-link {
+  color: #1384ff; }
+
+.btn-link:hover {
+  text-decoration: underline; }
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  transition: 0.2s; }
+
+.btn-primary:hover {
+  background-color: #0062cc; }
+
+.btn-primary:focus {
+  box-shadow: 0px 0px 0px 4px rgba(0, 123, 255, 0.7); }
+
+.btn-primary.active {
+  box-shadow: inset 0px 0px 15px 1px rgba(0, 74, 153, 0.7);
+  font-weight: bold; }
+
+.btn-primary.disabled {
+  background-color: rgba(153, 202, 255, 0.7);
+  box-shadow: none;
+  font-weight: lighter; }
+
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  transition: 0.2s; }
+
+.btn-secondary:hover {
+  background-color: #545b62; }
+
+.btn-secondary:focus {
+  box-shadow: 0px 0px 0px 4px rgba(108, 117, 125, 0.7); }
+
+.btn-secondary.active {
+  box-shadow: inset 0px 0px 15px 1px rgba(61, 66, 70, 0.7);
+  font-weight: bold; }
+
+.btn-secondary.disabled {
+  background-color: rgba(188, 193, 198, 0.7);
+  box-shadow: none;
+  font-weight: lighter; }
+
+.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  transition: 0.2s; }
+
+.btn-success:hover {
+  background-color: #1e7e34; }
+
+.btn-success:focus {
+  box-shadow: 0px 0px 0px 4px rgba(40, 167, 69, 0.7); }
+
+.btn-success.active {
+  box-shadow: inset 0px 0px 15px 1px rgba(20, 85, 35, 0.7);
+  font-weight: bold; }
+
+.btn-success.disabled {
+  background-color: rgba(134, 226, 155, 0.7);
+  box-shadow: none;
+  font-weight: lighter; }
+
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  transition: 0.2s; }
+
+.btn-danger:hover {
+  background-color: #bd2130; }
+
+.btn-danger:focus {
+  box-shadow: 0px 0px 0px 4px rgba(220, 53, 69, 0.7); }
+
+.btn-danger.active {
+  box-shadow: inset 0px 0px 15px 1px rgba(146, 25, 37, 0.7);
+  font-weight: bold; }
+
+.btn-danger.disabled {
+  background-color: rgba(243, 183, 189, 0.7);
+  box-shadow: none;
+  font-weight: lighter; }
+
+.btn-warning {
+  color: black;
+  background-color: #ffc107;
+  transition: 0.2s; }
+
+.btn-warning:hover {
+  background-color: #d39e00; }
+
+.btn-warning:focus {
+  box-shadow: 0px 0px 0px 4px rgba(255, 193, 7, 0.7); }
+
+.btn-warning.active {
+  box-shadow: inset 0px 0px 15px 1px rgba(160, 120, 0, 0.7);
+  font-weight: bold; }
+
+.btn-warning.disabled {
+  background-color: rgba(255, 231, 160, 0.7);
+  box-shadow: none;
+  font-weight: lighter; }
+
+.btn-info {
+  color: #fff;
+  background-color: #17a2b8;
+  transition: 0.2s; }
+
+.btn-info:hover {
+  background-color: #117a8b; }
+
+.btn-info:focus {
+  box-shadow: 0px 0px 0px 4px rgba(23, 162, 184, 0.7); }
+
+.btn-info.active {
+  box-shadow: inset 0px 0px 15px 1px rgba(12, 82, 93, 0.7);
+  font-weight: bold; }
+
+.btn-info.disabled {
+  background-color: rgba(122, 222, 238, 0.7);
+  box-shadow: none;
+  font-weight: lighter; }
+
+.btn-light {
+  color: black;
+  background-color: #f8f9fa;
+  transition: 0.2s; }
+
+.btn-light:hover {
+  background-color: #dae0e5; }
+
+.btn-light:focus {
+  box-shadow: 0px 0px 0px 4px rgba(248, 249, 250, 0.7); }
+
+.btn-light.active {
+  box-shadow: inset 0px 0px 15px 1px rgba(189, 198, 208, 0.7);
+  font-weight: bold; }
+
+.btn-light.disabled {
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: none;
+  font-weight: lighter; }
+
+.btn-dark {
+  color: #fff;
+  background-color: #343a40;
+  transition: 0.2s; }
+
+.btn-dark:hover {
+  background-color: #1d2124; }
+
+.btn-dark:focus {
+  box-shadow: 0px 0px 0px 4px rgba(52, 58, 64, 0.7); }
+
+.btn-dark.active {
+  box-shadow: inset 0px 0px 15px 1px rgba(6, 7, 8, 0.7);
+  font-weight: bold; }
+
+.btn-dark.disabled {
+  background-color: rgba(122, 135, 147, 0.7);
+  box-shadow: none;
+  font-weight: lighter; }
 
 @media screen and (min-width: 576px) {
   .container {
