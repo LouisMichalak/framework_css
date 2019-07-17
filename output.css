@@ -15,7 +15,7 @@
   background-color: orange; }
 
 /*CONTAINERS_COLUMNS*/
-.container {
+.container, .container-fluid {
   display: block;
   margin: auto; }
 
@@ -522,7 +522,7 @@
   font-weight: lighter; }
 
 /*IMAGES*/
-.img-responsive, .img-thumbnail, .img-rounded, .img-circle {
+.img-responsive, .img-thumbnail, .img-rounded, .img-circle, .img-blur {
   max-width: 100%;
   height: auto; }
 
@@ -536,5 +536,8 @@
 
 .img-circle {
   border-radius: 50%; }
+
+.img-blur {
+  filter: blur(10px); }
 
 /*# sourceMappingURL=output.css.map */

@@ -15,11 +15,15 @@
   background-color: orange;
 }
 /*CONTAINERS_COLUMNS*/
-.container {
+%container {
   display: block;
   margin: auto;
 }
+.container {
+  @extend %container;
+}
 .container-fluid {
+  @extend %container;
   width: 100%;
 }
 .row {
@@ -143,4 +147,8 @@ $color-themes: (
 .img-circle {
   @extend %baseImgResp;
   border-radius: 50%;
+}
+.img-blur {
+  @extend %baseImgResp;
+  filter: blur(10px);
 }
