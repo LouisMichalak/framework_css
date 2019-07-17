@@ -1,4 +1,65 @@
-$color: red;
-body {
-  background: $color
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.container {
+  display: block;
+  margin: auto;
+}
+.container-fluid {
+  width: 100%;
+}
+.row {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+);
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px
+);
+@each $name, $size in $grid-breakpoints {
+  @media screen and (min-width: $size) {
+    .container {
+      width: map_get($container-max-widths, $name);
+    }
+    @for $count from 1 through $grid-columns {
+      @if $name != xs
+      {
+        .col--#{$name}-#{$count} {
+          width: percentage($count / $grid-columns);
+          padding-left: $grid-gutter-width / 2;
+          padding-right: $grid-gutter-width / 2;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 0) {
+  @for $count from 1 through $grid-columns {
+    .col-#{$count} {
+      width: percentage($count / $grid-columns);
+      padding-left: $grid-gutter-width / 2;
+      padding-right: $grid-gutter-width / 2;
+    }
+  }
 }
