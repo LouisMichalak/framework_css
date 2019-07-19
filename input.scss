@@ -1,23 +1,32 @@
 * {
   box-sizing: border-box;
+  font-size: 2vw;
   margin: 0;
   padding: 0;
 }
+/*ELEMENTS FOR TEST*/
 .red {
   background-color: red;
 }
 .blue {
   background-color: blue;
 }
-.container {
+.orange {
+  background-color: orange;
+}
+/*CONTAINERS_COLUMNS*/
+%container {
   display: block;
   margin: auto;
 }
+.container {
+  @extend %container;
+}
 .container-fluid {
+  @extend %container;
   width: 100%;
 }
 .row {
-  background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -62,4 +71,124 @@ $container-max-widths: (
       padding-right: $grid-gutter-width / 2;
     }
   }
+}
+/*COLORS*/
+$color-themes_btns_alerts: (
+        primary: (back: #007bff,color: #fff),
+        secondary: (back: #6c757d,color: #fff),
+        success: (back: #28a745,color: #fff),
+        danger: (back: #dc3545,color: #fff),
+        warning: (back: #ffc107,color: black),
+        info: (back: #17a2b8,color: #fff),
+        light: (back: #f8f9fa,color: black),
+        dark: (back: #343a40,color: #fff)
+);
+$color-themes_text: (
+        primary: (back: #007bff,color: #fff),
+        muted: (back: #6c757d,color: #fff),
+        success: (back: #28a745,color: #fff),
+        error: (back: #dc3545,color: #fff),
+        warning: (back: #ffc107,color: black),
+        info: (back: #17a2b8,color: #fff),
+        light: (back: #f8f9fa,color: black)
+);
+/*BUTTONS*/
+.btn {
+  cursor: pointer;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+.btn:focus {
+  outline-style: none;
+}
+.btn-link {
+  color: #1384ff;
+}
+.btn-link:hover {
+  text-decoration: underline;
+}
+@each $name, $color in $color-themes_btns_alerts {
+  .btn-#{$name} {
+    color: map_get($color, color);
+    background-color: map_get($color, back);
+    transition: 0.2s;
+  }
+  .btn-#{$name}:hover {
+    background-color: darken(map_get($color, back), 10%);
+  }
+  .btn-#{$name}:focus {
+    box-shadow: 0px 0px 0px 4px adjust_color(map_get($color, back), $lightness: 0%, $alpha: -0.3);
+  }
+  .btn-#{$name}.active {
+    box-shadow: inset 0px 0px 15px 1px adjust_color(map_get($color, back), $lightness: -20%, $alpha: -0.3);
+    font-weight: bold;
+  }
+  .btn-#{$name}.disabled {
+    background-color: adjust_color(map_get($color, back), $lightness: 30%, $alpha: -0.3);
+    box-shadow: none;
+    font-weight: lighter;
+  }
+  .btn-#{$name}:disabled {
+    background-color: adjust_color(map_get($color, back), $lightness: 30%, $alpha: -0.3);
+    box-shadow: none;
+    font-weight: lighter;
+  }
+}
+/*ALERTS*/
+.alert {
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+@each $name, $color in $color-themes_btns_alerts {
+  .alert-#{$name} {
+    background-color: adjust_color(map_get($color, back), $lightness: 30%, $alpha: -0.3);
+    color: adjust_color(map_get($color, back), $lightness: -20%);
+    border-color: adjust_color(map_get($color, back), $lightness: 20%);
+  }
+}
+.alert-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.7);
+}
+/*COLORED_TEXT/BG*/
+@each $name, $color in $color-themes_text {
+  .text-#{$name} {
+    color: map_get($color, back);
+  }
+  .bg-#{$name} {
+    background: map_get($color, back);
+  }
+}
+/*IMAGES*/
+%baseImgResp {
+  max-width: 100%;
+  height: auto;
+}
+.img-responsive {
+  @extend %baseImgResp;
+}
+.img-thumbnail {
+  padding: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  @extend %baseImgResp;
+}
+.img-rounded {
+  @extend %baseImgResp;
+  border-radius: 4px;
+}
+.img-circle {
+  @extend %baseImgResp;
+  border-radius: 50%;
+}
+.img-blur {
+  @extend %baseImgResp;
+  filter: blur(10px);
 }
