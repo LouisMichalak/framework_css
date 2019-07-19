@@ -1,0 +1,52 @@
+/*
+Error: Undefined variable: "$color-themes_btns_alerts".
+        on line 6 of alerts.scss
+
+1: .alert {
+2:   padding: 12px 20px;
+3:   border: 1px solid transparent;
+4:   border-radius: 4px;
+5: }
+6: @each $name, $color in $color-themes_btns_alerts {
+7:   .alert-#{$name} {
+8:     background-color: adjust_color(map_get($color, back), $lightness: 30%, $alpha: -0.3);
+9:     color: adjust_color(map_get($color, back), $lightness: -20%);
+10:     border-color: adjust_color(map_get($color, back), $lightness: 20%);
+11:   }
+
+Backtrace:
+alerts.scss:6
+/usr/lib/ruby/vendor_ruby/sass/script/tree/variable.rb:49:in `_perform'
+/usr/lib/ruby/vendor_ruby/sass/script/tree/node.rb:50:in `perform'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:233:in `visit_each'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:36:in `visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:162:in `block in visit'
+/usr/lib/ruby/vendor_ruby/sass/stack.rb:79:in `block in with_base'
+/usr/lib/ruby/vendor_ruby/sass/stack.rb:135:in `with_frame'
+/usr/lib/ruby/vendor_ruby/sass/stack.rb:79:in `with_base'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:162:in `visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:52:in `map'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:52:in `visit_children'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:183:in `with_environment'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:170:in `visit_children'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:36:in `block in visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:190:in `visit_root'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:36:in `visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:161:in `visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:10:in `visit'
+/usr/lib/ruby/vendor_ruby/sass/tree/root_node.rb:36:in `css_tree'
+/usr/lib/ruby/vendor_ruby/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:389:in `_render_with_sourcemap'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:307:in `render_with_sourcemap'
+/usr/lib/ruby/vendor_ruby/sass/exec/sass_scss.rb:387:in `run'
+/usr/lib/ruby/vendor_ruby/sass/exec/sass_scss.rb:63:in `process_result'
+/usr/lib/ruby/vendor_ruby/sass/exec/base.rb:52:in `parse'
+/usr/lib/ruby/vendor_ruby/sass/exec/base.rb:19:in `parse!'
+/usr/bin/sass:8:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$color-themes_btns_alerts\".\A         on line 6 of alerts.scss\A \A 1: .alert {\A 2:   padding: 12px 20px;\A 3:   border: 1px solid transparent;\A 4:   border-radius: 4px;\A 5: }\A 6: @each $name, $color in $color-themes_btns_alerts {\A 7:   .alert-#{$name} {\A 8:     background-color: adjust_color(map_get($color, back), $lightness: 30%, $alpha: -0.3);\A 9:     color: adjust_color(map_get($color, back), $lightness: -20%);\A 10:     border-color: adjust_color(map_get($color, back), $lightness: 20%);\A 11:   }"; }

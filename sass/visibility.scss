@@ -1,0 +1,40 @@
+.hidden {
+  display: none;
+}
+.visible {
+  display: initial;
+}
+@each $name, $size in $grid-breakpoints {
+  @media screen and (min-width: map_get($size, max)) {
+    .hidden-#{$name}-up {
+      display: none;
+    }
+    .visible-#{$name}-up{
+      display: initial !important;
+    }
+  }
+  @media screen and (max-width: map_get($size, min)) {
+    .hidden-#{$name}-down {
+      display: none;
+    }
+    .visible-#{$name}-down {
+      display: initial !important;
+    }
+  }
+  @media screen and (min-width: map_get($size, min)) and (max-width: map_get($size, max)) {
+    .hidden-#{$name} {
+      display: none;
+    }
+    .visible-#{$name} {
+      display: initial !important;
+    }
+  }
+}
+@media print {
+  .visible-print {
+    display: initial !important;
+  }
+  .hidden-print {
+    display: none !important;
+  }
+}

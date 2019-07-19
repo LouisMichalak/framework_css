@@ -1,0 +1,17 @@
+.alert {
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+@each $name, $color in $color-themes_btns_alerts {
+  .alert-#{$name} {
+    background-color: adjust_color(map_get($color, back), $lightness: 30%, $alpha: -0.3);
+    color: adjust_color(map_get($color, back), $lightness: -20%);
+    border-color: adjust_color(map_get($color, back), $lightness: 20%);
+  }
+}
+.alert-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.7);
+}

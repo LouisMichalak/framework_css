@@ -1,0 +1,25 @@
+%baseImgResp {
+  max-width: 100%;
+  height: auto;
+}
+.img-responsive {
+  @extend %baseImgResp;
+}
+.img-thumbnail {
+  padding: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  @extend %baseImgResp;
+}
+.img-rounded {
+  @extend %baseImgResp;
+  border-radius: 4px;
+}
+.img-circle {
+  @extend %baseImgResp;
+  border-radius: 50%;
+}
+.img-blur {
+  @extend %baseImgResp;
+  filter: blur(10px);
+}

@@ -1,0 +1,34 @@
+$color-themes_btns_alerts: (
+        primary: (back: #007bff,color: #fff),
+        secondary: (back: #6c757d,color: #fff),
+        success: (back: #28a745,color: #fff),
+        danger: (back: #dc3545,color: #fff),
+        warning: (back: #ffc107,color: black),
+        info: (back: #17a2b8,color: #fff),
+        light: (back: #f8f9fa,color: black),
+        dark: (back: #343a40,color: #fff)
+);
+$color-themes_text: (
+        primary: (back: #007bff,color: #fff),
+        muted: (back: #6c757d,color: #fff),
+        success: (back: #28a745,color: #fff),
+        error: (back: #dc3545,color: #fff),
+        warning: (back: #ffc107,color: black),
+        info: (back: #17a2b8,color: #fff),
+        light: (back: #f8f9fa,color: black)
+);
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+$grid-breakpoints: (
+        xs: (min: 0, max: 576px),
+        sm: (min: 576px, max: 768px),
+        md: (min: 768px, max: 992px),
+        lg: (min: 992px, max: 1200px),
+        xl: (min: 1200px, max: 33554400px)
+);
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px
+);

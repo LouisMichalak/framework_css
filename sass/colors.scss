@@ -1,0 +1,8 @@
+@each $name, $color in $color-themes_text {
+  .text-#{$name} {
+    color: map_get($color, back);
+  }
+  .bg-#{$name} {
+    background: map_get($color, back);
+  }
+}

@@ -1,0 +1,19 @@
+.img-responsive, .img-thumbnail, .img-rounded, .img-circle, .img-blur {
+  max-width: 100%;
+  height: auto; }
+
+.img-thumbnail {
+  padding: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px; }
+
+.img-rounded {
+  border-radius: 4px; }
+
+.img-circle {
+  border-radius: 50%; }
+
+.img-blur {
+  filter: blur(10px); }
+
+/*# sourceMappingURL=imgs.css.map */

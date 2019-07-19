@@ -1,0 +1,42 @@
+%container {
+  display: block;
+  margin: auto;
+}
+.container {
+  @extend %container;
+}
+.container-fluid {
+  @extend %container;
+  width: 100%;
+}
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+@each $name, $size in $grid-breakpoints {
+  @media screen and (min-width: map_get($size, min)) {
+    .container {
+      width: map_get($container-max-widths, $name);
+    }
+    @for $count from 1 through $grid-columns {
+      @if $name != xs
+      {
+        .col--#{$name}-#{$count} {
+          width: percentage($count / $grid-columns);
+          padding-left: $grid-gutter-width / 2;
+          padding-right: $grid-gutter-width / 2;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 0) {
+  @for $count from 1 through $grid-columns {
+    .col-#{$count} {
+      width: percentage($count / $grid-columns);
+      padding-left: $grid-gutter-width / 2;
+      padding-right: $grid-gutter-width / 2;
+    }
+  }
+}
