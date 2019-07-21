@@ -37,7 +37,7 @@ $(document).ready(function () {
     $(document).keyup(function (e) {
         if (e.keyCode === 27)
         {
-            let key = searchOpenModal();
+            searchOpenModal();
         }
     });
     $.fn.modal = function(action) {
