@@ -870,4 +870,30 @@
   background-position: center;
   background-size: contain; }
 
+/*modals*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation-name: placeModal;
+  animation-duration: 0.4s; }
+
 /*# sourceMappingURL=main.css.map */
