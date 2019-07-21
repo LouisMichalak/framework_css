@@ -44,8 +44,6 @@ $(document).ready(function () {
         if (action === "show")
         {
             $(this).css('display', 'block');
-            $(this).fadeTo(0,0);
-            $(this).fadeTo('100', 1);
         }
         if (action === "hide")
         {
